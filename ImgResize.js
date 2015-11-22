@@ -1,6 +1,6 @@
-var ImageResizer = function(width, height, allow_enlarge) {
-    if (!(this instanceof ImageResizer)) {
-        return new ImageResizer(width, height, allow_enlarge)
+var ImgResize = function(width, height, allow_enlarge) {
+    if (!(this instanceof ImgResize)) {
+        return new ImgResize(width, height, allow_enlarge)
     }
 
     this.original_w = width;
@@ -20,7 +20,7 @@ var ImageResizer = function(width, height, allow_enlarge) {
     this.dest_h;
 };
 
-ImageResizer.prototype = {
+ImgResize.prototype = {
 
     resizeToHeight: function(height) {
         var ratio = height / this.getSourceHeight();
