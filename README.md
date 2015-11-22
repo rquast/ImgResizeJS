@@ -14,18 +14,18 @@ var allowEnlarge = false;
 var imageResize  = ImageResizer(w, h, allowEnlarge);
 
 // Crop
-imageResize.crop(300, 400);      // {w:300, h:400}
+imageResize.crop(300, 400);      // {dest_w:300, dest_h:400}
 
 // Resize to height
-imageResize.resizeToHeight(300); // {w: 436.3636363636363, h: 300}
+imageResize.resizeToHeight(300); // {dest_w: 436.3636363636363, dest_h: 300}
 
 // Resize to width
-imageResize.resizeToWidth(300);  //  {w: 300, h: 206.25}
+imageResize.resizeToWidth(300);  //  {dest_w: 300, dest_h: 206.25}
 
 // Scale
-imageResize.scale(150);          // {w: 1200, h: 825}
+imageResize.scale(150);          // {dest_w: 1200, dest_h: 825}
 
 // Resize
-imageResize.resize(300, 400);    // {w:300, h:400}
+imageResize.resize(300, 400);    // {dest_w:300, dest_h:400}
 
 ```
