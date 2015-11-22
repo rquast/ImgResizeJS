@@ -23,26 +23,36 @@ var ImgResize = function(width, height, allow_enlarge) {
 ImgResize.prototype = {
 
     resizeToHeight: function(height) {
+
         var ratio = height / this.getSourceHeight();
         var width = this.getSourceWidth() * ratio;
 
         this.resize(width, height);
 
-        return this;
+        return {
+            'w': this.dest_w,
+            'h': this.dest_h
+        };
     },
 
     resizeToWidth: function(width) {
         var ratio = width / this.getSourceWidth();
         var height = this.getSourceHeight() * ratio;
         this.resize(width, height);
-        return this;
+        return {
+            'w': this.dest_w,
+            'h': this.dest_h
+        };
     },
 
     scale: function(scale) {
         var width = this.getSourceWidth() * scale / 100;
         var height = this.getSourceHeight() * scale / 100;
         this.resize(width, height);
-        return this;
+        return {
+            'w': this.dest_w,
+            'h': this.dest_h
+        };
     },
 
     resize: function(width, height) {
@@ -62,7 +72,10 @@ ImgResize.prototype = {
         this.source_w = this.getSourceWidth();
         this.source_h = this.getSourceHeight();
 
-        return this;
+        return {
+            'w': this.dest_w,
+            'h': this.dest_h
+        };
     },
 
     crop: function(width, height) {
@@ -103,7 +116,10 @@ ImgResize.prototype = {
             this.dest_h = height;
         }
 
-        return this;
+        return {
+            'w': this.dest_w,
+            'h': this.dest_h
+        };
     },
 
     getSourceWidth: function() {
